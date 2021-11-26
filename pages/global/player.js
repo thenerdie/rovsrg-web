@@ -6,7 +6,7 @@ export default function Player({ PlayerName, Rating, TotalMapsPlayed, UserId, ke
     return <tr className={styles.listItem} key={key}>
         <td>#{rank}</td>
         <td>
-            <Link href={`/profile/${UserId}`}>{PlayerName}</Link>
+            <Link href={`/profile/${UserId}`}>{PlayerName ? PlayerName : ""}</Link>
         </td>
         <td>{Rating}</td>
         <td>{TotalMapsPlayed}</td>
