@@ -1,0 +1,11 @@
+.container {
+    width: 60%;
+    display: flex;
+    /* background-color: bisque; */
+    margin-left: auto;
+    margin-right: auto;
+    /* align-items: center; */
+    justify-content: center;
+    border-collapse: separate;
+    border-spacing: 0px 5px;
+}

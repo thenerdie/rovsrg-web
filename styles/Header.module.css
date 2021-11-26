@@ -1,0 +1,10 @@
+.head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px
+}
+
+.head * {
+    font-size: large;
+}

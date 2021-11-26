@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100vh
 }
 
 .main {
@@ -15,6 +15,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url("/screenshot1.png");
+  width: 100%;
+  border-radius: 4px;
+}
+
+.image {
+  border-radius: 6px;
 }
 
 .footer {
@@ -48,6 +55,8 @@
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
+  margin-bottom: 30px;
+  color: white;
 }
 
 .title,
