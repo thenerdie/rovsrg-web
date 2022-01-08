@@ -12,8 +12,9 @@ export default function Home() {
       </Head>
 
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>RoBeats fork focused on skill.</h1>
+      <main className="w-full h-full">
+        <div className="bg-in-game h-full w-full blur-sm rounded-md absolute"/>
+        <h1 className="text-white text-6xl font-bold grid place-items-center h-screen">RoBeats fork focused on skill.</h1>
       </main>
     </div>
   )
