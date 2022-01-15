@@ -4,6 +4,8 @@ import styles from '../styles/Home.module.css'
 
 import Game from "./components/home/game"
 
+const noblox = require('noblox.js');
+
 export default function Home() {
   return (
     <div className="flex flex-col">
