@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
 
 
-      <h1 className="font-bold mb-[5rem] mt-10 text-center text-6xl">Thinking differently about rhythm games.</h1>
+      <h1 className="font-bold mb-[5rem] mt-10 text-center text-6xl">placeholder</h1>
 
       <div className="text-center mb-[6rem]">
         <h1 className="text-xl font-bold mb-5">Our Games</h1>

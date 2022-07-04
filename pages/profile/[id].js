@@ -1,6 +1,8 @@
 import { useRouter } from "next/dist/client/router"
 import useSWR from "swr"
 
+import ProfileCard from "./profileCard"
+
 const fetcher = (url) => fetch(url).then(res => res.json())
 
 export default function Profile() {
@@ -9,7 +11,7 @@ export default function Profile() {
 
     return (
         <div>
-            {data?.result.Rank}
+            <ProfileCard {...data}></ProfileCard>
         </div>
     )
 }

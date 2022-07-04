@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <div>
       <div className="flex flex-row text-xl items-center gap-8">
-          <Image alt="ok" width={300} height={300} src="/R.png"/>
+          <Image alt="ok" width={200} height={200} src="/R.png"/>
           <Link href="/">Home</Link>
           <Link href="/global">Global</Link>
           <Link href="https://github.com/RoVSRG">GitHub</Link>

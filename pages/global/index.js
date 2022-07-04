@@ -11,22 +11,22 @@ const fetcher = (url) => fetch(url).then(res => res.json())
 function Global() {
     const { data, error } = useSWR("/api/global", fetcher)
 
-    let leaderboard = data?.results.map((element, i) => {
+    let leaderboard = data?.map((element, i) => {
         return <Player key={i} rank={i+1} {...element}/>
-    }) 
+    })
 
     return (
         <div>
             <Head>
                 <title>Global</title>
             </Head>
-            <table className={styles.listContainer}>
+            <table className="mx-auto w-[50%]">
                 <tbody>
-                    <tr className={styles.listHeader}>
+                    <tr>
                         <th>Rank</th>
                         <th>Name</th>
                         <th>Rating</th>
-                        <th>Total Maps Played</th>
+                        <th># Maps Played</th>
                     </tr>
                     {leaderboard}
                 </tbody>
