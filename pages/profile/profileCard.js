@@ -1,10 +1,16 @@
 import Image from "next/image"
 
-function ProfileCard({ UserId, PlayerName, Rank, Rating, TotalMapsPlayed }) {
-    return <div className="flex mx-auto gap-3 w-[40%]">
+function getFlagEmoji(countryCode) {
+    return countryCode?.toUpperCase().replace(/./g, char => 
+        String.fromCodePoint(127397 + char.charCodeAt())
+    );
+}
+
+function ProfileCard({ UserId, PlayerName, Rank, Rating, TotalMapsPlayed, CountryRegion }) {
+    return <div className="flex mb-5 gap-3 w-[50%]">
         <Image className="rounded w-[50%] bg-gray-100" src={`https://www.roblox.com/headshot-thumbnail/image?userId=${UserId}&width=420&height=420&format=png`} width={100} height={100}></Image>
         <div>
-            <h1 className="text-xl"><b>{PlayerName}</b></h1>
+            <h1 className="text-xl"><b>{PlayerName} {getFlagEmoji(CountryRegion)} </b></h1>
             <p>#{Rank}</p>
             <p>{Rating} SR</p>
             <p>{TotalMapsPlayed} Maps Played</p>
