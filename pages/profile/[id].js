@@ -21,6 +21,7 @@ export default function Profile() {
             <i className="text-sm truncate ...">{play.Map ? play.Map.AudioFilename : "Unknown"}</i>
             <p className="text-xs">{play.Map ? play.Map.AudioArtist : "Unknown"}</p>
         </td>
+        <td>{(play.Rate / 100).toFixed(2)}x</td>
         <td>{play.Rating.toFixed(2)}</td>
         <td>{play.Accuracy.toFixed(2)}%</td>
         <td>{play.Score}</td>
@@ -42,6 +43,7 @@ export default function Profile() {
                     <tr className="bg-gray-300">
                         <th className="text-left">Rank</th>
                         <th className="text-left">Song</th>
+                        <th className="text-left pr-5">Rate</th>
                         <th className="text-left pr-5">Rating</th>
                         <th className="text-left pr-5">Accuracy</th>
                         <th className="text-left">Score</th>
