@@ -13,14 +13,14 @@ function Global() {
 
     let leaderboard = data?.map((element, i) => {
         return <Player key={i} rank={i+1} {...element}/>
-    }) 
+    })
 
     return (
         <div>
             <Head>
                 <title>Global</title>
             </Head>
-            <table className={styles.listContainer}>
+            <table className="mx-auto w-[50%]">
                 <tbody>
                     <tr>
                         <th className="px-2 sm:px-4 py-1 sm:py-3 text-left text-xs sm:text-sm leading-4 font-medium text-gray-500 uppercase tracking-wider">Rank</th>
