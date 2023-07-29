@@ -1,10 +1,5 @@
-export default function handler(req, res) {
-    fetch(encodeURI(`${process.env.PARSE_URL}/functions/profile?userid=${req.query.id}`), {
-      method: "POST",
-      headers: {
-        "X-Parse-Application-Id": process.env.PARSE_APP_ID
-      }
-    }).then(data => {
-      res.status(200).json(data.body)
-    })
+export default async function handler(req, res) {
+  const profile = await fetch(encodeURI(`${process.env.RCS_BASE_URL}/profiles?userid=${req.query.id}&auth=${process.env.RCS_API_KEY}`))
+
+  res.status(200).json(await profile.json())
 }

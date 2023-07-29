@@ -13,7 +13,7 @@ function Game(props) {
         return null
     }
 
-    const gameData = data.data[0]
+    const gameData = data[0]
 
     return (
         <div>

@@ -9,9 +9,9 @@ import useSWR from "swr"
 const fetcher = (url) => fetch(url).then(res => res.json())
 
 function Global() {
-    const { data, error } = useSWR("/api/global", fetcher)
+    const { data } = useSWR("/api/global", fetcher)
 
-    let leaderboard = data?.results.map((element, i) => {
+    let leaderboard = data?.map((element, i) => {
         return <Player key={i} rank={i+1} {...element}/>
     }) 
 
@@ -22,11 +22,11 @@ function Global() {
             </Head>
             <table className={styles.listContainer}>
                 <tbody>
-                    <tr className={styles.listHeader}>
-                        <th>Rank</th>
-                        <th>Name</th>
-                        <th>Rating</th>
-                        <th>Total Maps Played</th>
+                    <tr>
+                        <th className="px-2 sm:px-4 py-1 sm:py-3 text-left text-xs sm:text-sm leading-4 font-medium text-gray-500 uppercase tracking-wider">Rank</th>
+                        <th className="px-2 sm:px-4 py-1 sm:py-3 text-left text-xs sm:text-sm leading-4 font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                        <th className="px-2 sm:px-4 py-1 sm:py-3 text-left text-xs sm:text-sm leading-4 font-medium text-gray-500 uppercase tracking-wider">Rating</th>
+                        <th className="px-2 sm:px-4 py-1 sm:py-3 text-left text-xs sm:text-sm leading-4 font-medium text-gray-500 uppercase tracking-wider">Total Maps Played</th>
                     </tr>
                     {leaderboard}
                 </tbody>
