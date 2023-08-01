@@ -16,7 +16,7 @@ export default function Profile() {
     // if (!profile) return <p>Loading...</p>
     if (error) return <div>failed to load</div>
 
-    let scores = plays?.slice(0, 50).map((play, i) => <tr className="text-lg bg-gray-900 pb-5">
+    let scores = plays?.slice(0, 50).map((play, i) => <tr className="text-lg bg-gray-900 pb-5" key={i}>
         <td className="text-center">#{i + 1}</td>
         <td className="flex flex-col">
             <p className="text-xl -mb-2 truncate ...">{play.Map ? play.Map.AudioFilename : "Unknown"} [{(play.Rate / 100).toFixed(2)}x]</p>
