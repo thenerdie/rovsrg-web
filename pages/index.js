@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
 
 
-      <h1 className="font-bold mb-[5rem] mt-10 text-center text-6xl">RoBeats Community Server</h1>
+      <h1 className="font-bold mb-[5rem] mt-10 text-center md:text-8xl sm:text-6xl">RoBeats Community Server</h1>
 
       <div className="text-center mb-[6rem]">
         <h1 className="text-xl font-bold mb-5">Our Games</h1>

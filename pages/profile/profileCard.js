@@ -9,18 +9,17 @@ function getFlagEmoji(countryCode) {
     );
 }
 
-function ProfileCard({ UserId, PlayerName, Rank, GlickoRating, TotalMapsPlayed, CountryRegion }) {
+function ProfileCard({ UserId, PlayerName, Rank, GlickoRating, TotalMapsPlayed, CountryRegion, RankedMatchesPlayed }) {
     const percentile = (Rank / 143705 * 100).toFixed(2)
 
-    const image = UserId ? <Image className="rounded w-[50%] bg-gray-100" src={`/api/roblox/thumbnails/${UserId}`} width={100} height={100}></Image> : null
+    const image = UserId ? <Image className="rounded w-[50%] bg-gray-900" src={`/api/roblox/thumbnails/${UserId}`} width={100} height={100}></Image> : null
 
     return <div className="flex mb-5 gap-3 w-[50%]">
         {image}
         <div>
-            <h1 className="text-xl"><b>{PlayerName} {getFlagEmoji(CountryRegion)} </b></h1>
-            <p>#{Rank}</p>
-            <p>{Math.round(GlickoRating)} MMR <b>{percentile < 50 ? `(Top ${percentile}%)` : `Bottom ${percentile}`}</b></p>
-            <p>{TotalMapsPlayed} Maps Played</p>
+            <h1 className="text-3xl text-gray-100"><b>{PlayerName} {getFlagEmoji(CountryRegion)} </b></h1>
+            <p className="text-2xl text-yellow-200">{Math.round(GlickoRating)} MMR (<b>#{Rank}</b>)</p>
+            <i className="text-lg">{TotalMapsPlayed} Maps Played / {RankedMatchesPlayed} Ranked Matches Played</i>
         </div>
     </div>
 }
