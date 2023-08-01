@@ -1,6 +1,8 @@
 import { useRouter } from "next/dist/client/router"
 import useSWR from "swr"
 
+import { format, formatDistance, formatRelative, subDays } from 'date-fns'
+
 import ProfileCard from "./profileCard"
 
 const fetcher = (url) => fetch(url).then(res => res.json())
@@ -12,7 +14,6 @@ export default function Profile() {
     const { data: plays } = useSWR(`/api/profile/plays/${router.query.id}`, fetcher)
 
     // if (!profile) return <p>Loading...</p>
-
     if (error) return <div>failed to load</div>
 
     let scores = plays?.slice(0, 50).map((play, i) => <tr className="text-lg bg-gray-900 pb-5">
@@ -20,6 +21,7 @@ export default function Profile() {
         <td className="flex flex-col">
             <p className="text-xl -mb-2 truncate ...">{play.Map ? play.Map.AudioFilename : "Unknown"} [{(play.Rate / 100).toFixed(2)}x]</p>
             <p className="text-md text-gray-300 flex">{play.Map ? play.Map.AudioArtist : "Unknown"} // <p className="ml-1 text-gray-400">Mapped by {play.Map?.AudioMapper ? play.Map.AudioMapper : "Unknown"}</p></p>
+            <i className="text-sm text-gray-500 -mt-2 truncate ...">{formatDistance(new Date(play._updated_at), new Date(), { addSuffix: true })}</i>
         </td>
         <td className={"text-2xl text-indigo-300 text-shadow-lg"}>{Math.round(play.Rating)}</td>
         <td>{play.Accuracy.toFixed(2)}%</td>

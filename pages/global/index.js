@@ -23,10 +23,10 @@ function Global() {
             <table className="mx-auto w-[50%]">
                 <tbody>
                     <tr>
-                        <th className="px-2 sm:px-4 py-1 sm:py-3 text-left text-xs sm:text-sm leading-4 font-medium text-gray-500 uppercase tracking-wider">Rank</th>
-                        <th className="px-2 sm:px-4 py-1 sm:py-3 text-left text-xs sm:text-sm leading-4 font-medium text-gray-500 uppercase tracking-wider">Name</th>
-                        <th className="px-2 sm:px-4 py-1 sm:py-3 text-left text-xs sm:text-sm leading-4 font-medium text-gray-500 uppercase tracking-wider">Rating</th>
-                        <th className="px-2 sm:px-4 py-1 sm:py-3 text-left text-xs sm:text-sm leading-4 font-medium text-gray-500 uppercase tracking-wider">Total Maps Played</th>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Rating</th>
+                        <th>Total Maps Played</th>
                     </tr>
                     {leaderboard}
                 </tbody>
