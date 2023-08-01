@@ -20,13 +20,15 @@ function Global() {
             <Head>
                 <title>Global</title>
             </Head>
-            <table className="mx-auto w-[50%]">
+            <table className="text-2xl text-left bg-gray-600 mx-auto w-[50%]">
                 <tbody>
                     <tr>
-                        <th>Rank</th>
+                        <th className="text-center">Rank</th>
                         <th>Name</th>
                         <th>Rating</th>
-                        <th>Total Maps Played</th>
+                        <th>Maps Played</th>
+                        <th>Ranked Matches Played</th>
+                        <th>Accuracy</th>
                     </tr>
                     {leaderboard}
                 </tbody>
