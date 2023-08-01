@@ -15,14 +15,14 @@ export default function Profile() {
 
     if (error) return <div>failed to load</div>
 
-    let scores = plays?.slice(0, 20).map((play, i) => <tr className="text-md bg-gray-100 pb-5">
+    let scores = plays?.slice(0, 50).map((play, i) => <tr className="text-md bg-gray-50 pb-5">
         <td className="text-center">#{i + 1}</td>
         <td className="flex flex-col">
             <i className="text-sm truncate ...">{play.Map ? play.Map.AudioFilename : "Unknown"}</i>
             <p className="text-xs">{play.Map ? play.Map.AudioArtist : "Unknown"}</p>
         </td>
         <td>{(play.Rate / 100).toFixed(2)}x</td>
-        <td>{play.Rating.toFixed(2)}</td>
+        <td>{Math.round(play.Rating)}</td>
         <td>{play.Accuracy.toFixed(2)}%</td>
         <td>{play.Score}</td>
         <td>{play.Mean.toFixed(2)}</td>
@@ -38,10 +38,10 @@ export default function Profile() {
         <div className="mx-auto w-[60%]">
             <ProfileCard {...profile}></ProfileCard>
             <h1 className="text-2xl mb-6"><b>Top Scores</b></h1>
-            <table className="min-w-full shadow-md rounded">
+            <table className="min-w-full shadow-xl rounded">
                 <tbody>
                     <tr className="bg-gray-300">
-                        <th className="text-left">Rank</th>
+                        <th className="text-center">Rank</th>
                         <th className="text-left">Song</th>
                         <th className="text-left pr-5">Rate</th>
                         <th className="text-left pr-5">Rating</th>

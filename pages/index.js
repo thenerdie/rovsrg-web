@@ -14,20 +14,15 @@ export default function Home() {
       </Head>
 
 
-      <h1 className="font-bold mb-[5rem] mt-10 text-center text-6xl">placeholder</h1>
+      <h1 className="font-bold mb-[5rem] mt-10 text-center text-6xl">RoBeats Community Server</h1>
 
       <div className="text-center mb-[6rem]">
         <h1 className="text-xl font-bold mb-5">Our Games</h1>
 
         <div className="flex flex-row justify-center gap-5">
           <Game universeId={1643537246} src="/thumbs/robeatscs.png">RoBeats CS</Game>
-          <Game universeId={1647009366} src="/thumbs/rosu.png">rosu!</Game>
         </div>
       </div>
-
-      <main className="w-full h-full bg-in-game rounded-l">
-        <h1 className="text-white text-6xl font-bold grid place-items-center h-screen">RoBeats fork focused on skill.</h1>
-      </main>
     </div>
   )
 }

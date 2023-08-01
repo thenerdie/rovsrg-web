@@ -8,9 +8,9 @@ function MyApp({ Component, pageProps }) {
     <div>
       <div className="flex flex-row text-xl items-center gap-8">
           <Image alt="ok" width={200} height={200} src="/R.png"/>
-          <Link href="/">Home</Link>
-          <Link href="/global">Global</Link>
-          <Link href="https://github.com/RoVSRG">GitHub</Link>
+          <Link href="/">HOME</Link>
+          <Link href="/global">GLOBAL</Link>
+          <Link href="https://github.com/RoVSRG">GITHUB</Link>
       </div>
       <Component {...pageProps} />
     </div>
