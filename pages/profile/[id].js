@@ -19,7 +19,9 @@ export default function Profile() {
         <td className="text-center">#{i + 1}</td>
         <td className="flex flex-col">
             <p className="text-xl -mb-2 truncate ...">{play.Map ? play.Map.AudioFilename : "Unknown"} [{(play.Rate / 100).toFixed(2)}x]</p>
-            <p className="text-md text-gray-300 flex">{play.Map ? play.Map.AudioArtist : "Unknown"} // <p className="ml-1 text-gray-400">Mapped by {play.Map?.AudioMapper ? play.Map.AudioMapper : "Unknown"}</p></p>
+            <p className="text-md text-gray-300 flex">{play.Map ? play.Map.AudioArtist : "Unknown"}
+            //
+            <p className="ml-1 text-gray-400">Mapped by {play.Map?.AudioMapper ? play.Map.AudioMapper : "Unknown"}</p></p>
             <i className="text-sm text-gray-500 -mt-2 truncate ...">{formatDistance(new Date(play._updated_at), new Date(), { addSuffix: true })}</i>
         </td>
         <td className={"text-2xl text-indigo-300 text-shadow-lg"}>{Math.round(play.Rating)}</td>
