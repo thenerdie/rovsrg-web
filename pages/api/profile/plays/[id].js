@@ -18,8 +18,4 @@ export default function handler(req, res) {
 
       res.status(200).json(plays)
     })
-
-    // console.log(body)
-
-    // res.status(200).json(plays)
 }
