@@ -1,7 +1,7 @@
 import { useRouter } from "next/dist/client/router"
 import useSWR from "swr"
 
-import { format, formatDistance, formatRelative, subDays } from 'date-fns'
+import { formatDistance } from 'date-fns'
 
 import ProfileCard from "./profileCard"
 
@@ -12,8 +12,7 @@ export default function Profile() {
 
     const { data: profile, error } = useSWR(`/api/profile/${router.query.id}`, fetcher)
     const { data: plays } = useSWR(`/api/profile/plays/${router.query.id}`, fetcher)
-
-    // if (!profile) return <p>Loading...</p>
+    
     if (error) return <div>failed to load</div>
 
     let scores = plays?.slice(0, 50).map((play, i) => <tr className="text-lg bg-gray-900 pb-5" key={i}>
